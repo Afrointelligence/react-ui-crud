@@ -4,8 +4,8 @@ import { Combobox } from '@headlessui/react';
 import { MinusCircleIcon } from '@heroicons/react/24/outline';
 import _ from 'lodash';
 import getKey from '../../../../../utilities/getKey';
-import { type Accessor } from '../../../../../utilities/AccessorTypes';
-import objectView from '../../../../../utilities/objectView';
+import { type Accessor } from '../../../../../utilities';
+import { objectView } from '../../../../../utilities';
 
 function classNames(...classes: any[]): string {
   return classes.filter(Boolean).join(' ');
