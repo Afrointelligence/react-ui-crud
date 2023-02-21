@@ -1,0 +1,4 @@
+.idea
+.storybook
+dist
+node_modules
