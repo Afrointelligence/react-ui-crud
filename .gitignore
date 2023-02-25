@@ -1,5 +1,20 @@
 .idea
-.storybook
-dist
-node_modules
-link
+package/.storybook
+package/dist
+package/node_modules
+package/link
+
+# Documentation
+documentation/node_modules
+documentation/build
+documentation/.docusaurus
+documentation/.cache-loader
+documentation/.DS_Store
+documentation/.env.local
+documentation/.env.development.local
+documentation/.env.test.local
+documentation/.env.production.local
+documentation/npm-debug.log*
+documentation/yarn-debug.log*
+documentation/yarn-error.log*
+
