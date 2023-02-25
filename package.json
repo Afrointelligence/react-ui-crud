@@ -1,11 +1,10 @@
 {
   "name": "react-ui-crud",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
   "files": [
-    "dist/cjs"
+    "dist/cjs/"
   ],
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
@@ -57,14 +56,20 @@
     "prettier": "2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.43.1",
     "rollup": "^3.17.1",
     "rollup-plugin-dts": "^5.2.0",
+    "rollup-plugin-import-css": "^3.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-terser": "^7.0.2",
     "tailwindcss": "^3.2.7",
     "tslib": "^2.5.0",
     "typescript": "^4.9.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-hook-form": "^7.43.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }

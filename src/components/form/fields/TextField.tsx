@@ -2,6 +2,7 @@ import React, { type ReactElement } from 'react';
 import { type RegisterOptions } from 'react-hook-form';
 import { FieldFooter } from './FieldFooter';
 import { useFormContext } from '../FormProvider';
+import './tailwind.css';
 
 interface Props {
   label?: string;

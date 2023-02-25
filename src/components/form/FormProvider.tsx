@@ -1,7 +1,7 @@
 import React, { type ReactElement, type ReactNode, useContext } from 'react';
 import { type UseFormReturn } from 'react-hook-form';
 
-interface FormContextType<T> extends UseFormReturn {
+export interface FormContextType<T> extends UseFormReturn {
   onSubmit: (data: T) => Promise<void> | void;
 }
 const FormProviderContext = React.createContext<FormContextType<any>>(
