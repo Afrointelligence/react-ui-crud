@@ -4,6 +4,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import './tailwind.css';
 import { Form, SubmitButton } from '../components';
 import { SelectField } from '../components/form/fields/Select/SelectField';
+import { InputField } from '../components/form/fields/Input/InputField';
+import {
+  EnvelopeIcon,
+  QuestionMarkCircleIcon,
+} from '@heroicons/react/24/outline';
 
 export default {
   title: 'Form/Dropdowns',
@@ -29,6 +34,12 @@ const Template: ComponentStory<typeof Form<string>> = (args) => {
   return (
     <Form {...args}>
       <div className="w-96">
+        <InputField
+          addon={<QuestionMarkCircleIcon className="w-5" />}
+          placeholder="type something"
+          name="input-test"
+          rules={{ required: true }}
+        />
         <label
           htmlFor="dad"
           className="block text-sm font-medium text-gray-700"
@@ -36,7 +47,8 @@ const Template: ComponentStory<typeof Form<string>> = (args) => {
           Dad
         </label>
         <SelectField
-          type="list"
+          type="combo"
+          multiple
           placeholder="Select a value"
           name="testSelect"
           list={people}

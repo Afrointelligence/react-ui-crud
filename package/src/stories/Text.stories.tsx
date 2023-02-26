@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import './tailwind.css';
 import { Form, TextField, SubmitButton, TextareaField } from '../components';
+import { InputField } from '../components/form/fields/Input/InputField';
 
 export default {
   title: 'Form/Text',
@@ -12,6 +13,9 @@ export default {
 const Template: ComponentStory<typeof Form<string>> = (args) => {
   return (
     <Form {...args}>
+      <div className="w-96">
+        <InputField name="input-test" rules={{ required: true }} />
+      </div>
       <div className="w-full">
         <div className="flex justify-between space-x-2">
           <TextField
