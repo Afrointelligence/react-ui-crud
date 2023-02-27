@@ -11,6 +11,7 @@ type selectType = 'native' | 'list' | 'combo';
 interface Props<T> {
   placeholder?: string;
   name: string;
+  label?: string;
   rules?: RegisterOptions;
   accessor?: Accessor<T>;
   getList?: () => Promise<T[]> | T[];
@@ -18,6 +19,7 @@ interface Props<T> {
   disabled?: boolean;
   multiple?: boolean;
   className?: string;
+  errorClassName?: string;
   onChange?: any;
   type?: selectType;
 }
@@ -29,8 +31,10 @@ export function SelectField<T>({
   getList,
   list: listFromProp,
   name,
+  label,
   placeholder,
   className,
+  errorClassName,
   onChange,
   rules = {},
   type = 'list',
@@ -46,7 +50,10 @@ export function SelectField<T>({
   useEffect(() => {
     void getAndSetList();
   }, []);
-  const { control } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
   const value = useWatch({
     control,
     name,
@@ -61,9 +68,21 @@ export function SelectField<T>({
     disabled,
     placeholder,
     multiple,
+    className,
+    errorClassName,
+    hasError: !!errors[`${name}`],
   };
   return (
     <>
+      {label && (
+        <label
+          htmlFor={name}
+          className="block text-sm font-medium text-gray-700"
+        >
+          {label}
+        </label>
+      )}
+
       <Controller
         name={name}
         control={control}

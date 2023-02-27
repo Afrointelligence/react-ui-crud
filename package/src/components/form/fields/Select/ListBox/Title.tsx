@@ -5,6 +5,9 @@ import { Listbox } from '@headlessui/react';
 interface Props {
   title: string;
   placeholder?: string;
+  className?: string;
+  errorClassName?: string;
+  hasError?: boolean;
 }
 
 function Main({
@@ -35,9 +38,21 @@ function After(): ReactElement {
   );
 }
 
-function Title({ title, placeholder }: Props): ReactElement {
+function Title({
+  title,
+  placeholder,
+  hasError,
+  className,
+  errorClassName,
+}: Props): ReactElement {
+  const defaultClass =
+    'w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow-md sm:text-sm focus:border focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300';
+  const customClass = className ?? defaultClass;
+  const errorClass = errorClassName ?? `${defaultClass} border border-red-500`;
   return (
-    <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+    <Listbox.Button
+      className={`relative ${hasError ? errorClass : customClass}`}
+    >
       <Main title={title} placeholder={placeholder} />
       <After />
     </Listbox.Button>

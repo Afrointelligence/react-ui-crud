@@ -8,11 +8,14 @@ import SelectedList from '../SelectedList';
 
 interface Props<T> {
   placeholder?: string;
+  className?: string;
+  errorClassName?: string;
+  hasError?: boolean;
   accessor?: Accessor<T>;
   value?: T | T[];
   disabled?: boolean;
   multiple?: boolean;
-  getList?: (s: string) => (Promise<T[]> | T[]);
+  getList?: (s: string) => Promise<T[]> | T[];
   list?: T[];
   onChange: any;
 }
@@ -22,6 +25,9 @@ export default function ComboBoxElement<T>({
   disabled,
   multiple,
   placeholder,
+  className,
+  errorClassName,
+  hasError,
   getList,
   list: listFromProps,
   value,
@@ -40,21 +46,24 @@ export default function ComboBoxElement<T>({
   }, [query]);
 
   const filteredList =
-        query === ''
-          ? list
-          : list.filter((item) =>
-            String(objectView(item, accessor))
-              .toLowerCase()
-              .replace(/\s+/g, '')
-              .includes(query.toLowerCase().replace(/\s+/g, ''))
-          );
+    query === ''
+      ? list
+      : list.filter((item) =>
+          String(objectView(item, accessor))
+            .toLowerCase()
+            .replace(/\s+/g, '')
+            .includes(query.toLowerCase().replace(/\s+/g, ''))
+        );
 
-  const displayValueFn = multiple ? (value: any[]) => (value.map((item: any) => objectView(item, accessor)).join(', ')) : (value: any) => String(objectView(value, accessor));
+  const displayValueFn = multiple
+    ? (value: any[]) =>
+        value.map((item: any) => objectView(item, accessor)).join(', ')
+    : (value: any) => String(objectView(value, accessor));
 
   const props = {
     value,
     onChange,
-    disabled
+    disabled,
   };
 
   if (multiple) {
@@ -64,10 +73,31 @@ export default function ComboBoxElement<T>({
   return (
     <Combobox {...props}>
       <div className="relative mt-1">
-        <Title setQuery={setQuery} displayValueFn={displayValueFn} placeholder={placeholder} />
-        <OptionsList multiple={multiple} list={filteredList} value={value} accessor={accessor} setQuery={setQuery} query={query} />
+        <Title
+          className={className}
+          errorClassName={errorClassName}
+          hasError={hasError}
+          setQuery={setQuery}
+          displayValueFn={displayValueFn}
+          placeholder={placeholder}
+        />
+        <OptionsList
+          multiple={multiple}
+          list={filteredList}
+          value={value}
+          accessor={accessor}
+          setQuery={setQuery}
+          query={query}
+        />
       </div>
-      {multiple && <SelectedList value={value as T[]} accessor={accessor} list={filteredList} onChange={onChange} />}
+      {multiple && (
+        <SelectedList
+          value={value as T[]}
+          accessor={accessor}
+          list={filteredList}
+          onChange={onChange}
+        />
+      )}
     </Combobox>
   );
 }

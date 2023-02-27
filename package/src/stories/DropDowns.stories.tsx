@@ -3,9 +3,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import './tailwind.css';
 import { Form, SubmitButton } from '../components';
-import { SelectField } from '../components/form/fields/Select/SelectField';
-import { InputField } from '../components/form/fields/Input/InputField';
+import { SelectField, InputField } from '../components';
 import {
+  CurrencyDollarIcon,
   EnvelopeIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/react/24/outline';
@@ -35,7 +35,12 @@ const Template: ComponentStory<typeof Form<string>> = (args) => {
     <Form {...args}>
       <div className="w-96">
         <InputField
-          addon={<QuestionMarkCircleIcon className="w-5" />}
+          label="Input Test"
+          addon="https://"
+          // className="border border-blue-300 rounded-md"
+          // errorClassName="border border-green-800 rounded-md"
+          leadingIcon={<CurrencyDollarIcon className="w-5" />}
+          tailingIcon={<QuestionMarkCircleIcon className="w-5" />}
           placeholder="type something"
           name="input-test"
           rules={{ required: true }}
@@ -47,12 +52,23 @@ const Template: ComponentStory<typeof Form<string>> = (args) => {
           Dad
         </label>
         <SelectField
-          type="combo"
           multiple
           placeholder="Select a value"
           name="testSelect"
           list={people}
+          type="combo"
+          // className="rounded-md shadow-lg"
+          // errorClassName="border border-4 p-4 border-red-700 rounded-md"
           accessor="value"
+          rules={{ required: true }}
+        />
+        <SelectField
+          multiple
+          placeholder="Select a value"
+          name="testSelect2"
+          list={people}
+          accessor="value"
+          rules={{ required: true }}
         />
         <SubmitButton label="Click to submit" />
       </div>
