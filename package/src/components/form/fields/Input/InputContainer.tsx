@@ -21,9 +21,10 @@ function InputContainer({
 
   const customClass =
     className ??
-    'rounded-md shadow-md sm:text-sm focus:border focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300';
+    'rounded-md shadow-md sm:text-sm mb-4 focus:border focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300';
   const errorClass =
-    errorClassName ?? 'border border-red-500 rounded-md shadow-md sm:text-sm';
+    errorClassName ??
+    'border border-red-500 rounded-md shadow-md sm:text-sm mb-4';
   return (
     <div
       className={`flex ${errors[name] ? errorClass : customClass} `}

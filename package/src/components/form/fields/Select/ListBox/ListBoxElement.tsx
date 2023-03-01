@@ -46,7 +46,7 @@ export default function ListBoxElement<T>({
 
   return (
     <Listbox {...props}>
-      <div className="relative mt-1 mb-4">
+      <div className="relative mt-1">
         <Title
           title={title}
           placeholder={placeholder}

@@ -46,7 +46,7 @@ function Title({
   errorClassName,
 }: Props): ReactElement {
   const defaultClass =
-    'w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow-md sm:text-sm focus:border focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300';
+    'mb-4 w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left shadow-md sm:text-sm focus:border focus-within:border-blue-300 focus-within:ring-1 focus-within:ring-blue-300';
   const customClass = className ?? defaultClass;
   const errorClass = errorClassName ?? `${defaultClass} border border-red-500`;
   return (
