@@ -1,0 +1,72 @@
+import {Form, InputField} from "react-ui-crud";
+
+## InputField
+
+```jsx
+import { InputField, Form } from "react-ui-crud";
+
+<Form>
+  <InputField label="name" name="name" />
+</Form>;
+```
+
+<Form>
+  <InputField label="name" name="name" />
+</Form>
+
+## InputField with leading icon
+
+```jsx live
+function displayInput() {
+  return (
+    <Form>
+      <div
+        style={{
+          width: 300,
+          margin: "auto",
+        }}
+      >
+        <InputField
+          label="num"
+          name="num"
+          leadingIcon={<CurrencyDollarIcon className="w-5" />}
+        />
+      </div>
+    </Form>
+  );
+}
+```
+
+## InputField with tailing icon
+
+```jsx live
+function displayInput() {
+  return (
+    <Form>
+      <InputField
+        label="num"
+        name="num"
+        tailingIcon={<QuestionMarkCircleIcon className="w-5" />}
+      />
+    </Form>
+  );
+}
+```
+
+## InputField with add-on
+
+```jsx live
+function displayInput() {
+  return (
+    <Form>
+      <InputField
+        label="Input Test"
+        addon="https://"
+        placeholder="type something"
+        name="input-test"
+        rules={{ required: true }}
+      />
+    </Form>
+  );
+}
+```
