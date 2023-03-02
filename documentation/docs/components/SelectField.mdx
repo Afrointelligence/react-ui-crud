@@ -1,9 +1,9 @@
 import {SelectField} from "react-ui-crud";
-import DisplayForm from "../../src/pages/_displayForm";
+import DisplayForm from "../../lib/Display/displayForm";
 export const people = [
-    {value: "Paul", label: "Paul"},
-    {value: "George", label: "George"},
-    {value: "Ringo", label: "Ringo"},
+  { value: "Paul", label: "Paul" },
+  { value: "George", label: "George" },
+  { value: "Ringo", label: "Ringo" },
 ];
 
 ## For instance
@@ -16,11 +16,7 @@ const people = [
   { value: "George", label: "George" },
   { value: "Ringo", label: "Ringo" },
 ];
-
 ```
-
-
-
 
 ## SelectField
 
@@ -37,19 +33,16 @@ You can use the SelectField component to create a select field.
 </Form>
 ```
 
-
 # Result
 
 <DisplayForm>
-    <SelectField
-        placeholder="Select a value"
-        name="testSelect"
-        list={people}
-        accessor="value"
-    />
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+  />
 </DisplayForm>
-
-
 
 ## Combobox
 
@@ -71,13 +64,13 @@ It will allow you to type in the field and select the value from the list.
 # Result
 
 <DisplayForm>
-    <SelectField
-        placeholder="Select a value"
-        name="testSelect"
-        list={people}
-        accessor="value"
-        type="combo"
-    />
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="combo"
+  />
 </DisplayForm>
 
 ## Native Select
@@ -100,20 +93,11 @@ It will allow you to make native select field.
 # Result
 
 <DisplayForm>
-    <>
-        <SelectField
-            placeholder="Select a value"
-            name="testSelect"
-            list={people}
-            accessor="value"
-            type="native"
-        />
-        <SelectField
-            placeholder="Select a value"
-            name="test"
-            list={people}
-            accessor="value"
-            type="native"
-        />
-    </>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="native"
+  />
 </DisplayForm>

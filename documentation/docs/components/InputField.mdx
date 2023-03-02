@@ -1,4 +1,5 @@
-import {Form, InputField} from "react-ui-crud";
+import {InputField} from "react-ui-crud";
+import DisplayForm from "../../lib/Display/displayForm";
 
 ## InputField
 
@@ -10,47 +11,41 @@ import { InputField, Form } from "react-ui-crud";
 </Form>;
 ```
 
-<Form>
-  <InputField label="name" name="name" />
-</Form>
+<DisplayForm>
+    <InputField label="name" name="name"/>
+</DisplayForm>
 
 ## InputField with leading icon
 
 ```jsx live
 function displayInput() {
   return (
-    <Form>
-      <div
-        style={{
-          width: 300,
-          margin: "auto",
-        }}
-      >
+    <DisplayForm>
         <InputField
           label="num"
           name="num"
           leadingIcon={<CurrencyDollarIcon className="w-5" />}
         />
-      </div>
-    </Form>
+    </DisplayForm>
   );
 }
 ```
 
 ## InputField with tailing icon
 
-```jsx live
-function displayInput() {
+```jsx live noInline
+const displayInput=()=> {
   return (
-    <Form>
+    <DisplayForm>
       <InputField
         label="num"
         name="num"
         tailingIcon={<QuestionMarkCircleIcon className="w-5" />}
       />
-    </Form>
+    </DisplayForm>
   );
 }
+render(displayInput)
 ```
 
 ## InputField with add-on
@@ -58,7 +53,7 @@ function displayInput() {
 ```jsx live
 function displayInput() {
   return (
-    <Form>
+    <DisplayForm>
       <InputField
         label="Input Test"
         addon="https://"
@@ -66,7 +61,7 @@ function displayInput() {
         name="input-test"
         rules={{ required: true }}
       />
-    </Form>
+    </DisplayForm>
   );
 }
 ```

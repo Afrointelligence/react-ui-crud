@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, SubmitButton} from "react-ui-crud";
 
 interface Props {
-    children: JSX.Element;
+    children: JSX.Element | JSX.Element[];
 }
 
 const DisplayForm = (props: Props) => {
@@ -13,7 +13,7 @@ const DisplayForm = (props: Props) => {
         >
             <Form onSubmit={setData}>
                 {props.children}
-                <br/>
+
                 <SubmitButton
                     label="Submit"
                 />

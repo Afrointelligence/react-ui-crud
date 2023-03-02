@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Installation
 
-<p class="description">Install React Crud UI</p>
+<p class="description">Install React Ui Crud</p>
 
 ## Default installation
 
@@ -12,21 +12,22 @@ Run one of the following commands to add React Crud Ui to your project:
 
 ### npm
 
-```sh
-npm install react-crud-ui
+```shell
+npm install react-ui-crud
 ```
 
 ### yarn
 
-```sh
-yarn add react-crud-ui
+```bash
+yarn add react-ui-crud
 ```
 
-## Peer dependencies
+# Peer dependencies
 
 <!-- #react-peer-version -->
 
-[`react`](https://www.npmjs.com/package/react) >= 17.0.0 and [`react-dom`](https://www.npmjs.com/package/react-dom) >=
+[`react`](https://www.npmjs.com/package/react) >= 17.0.0
+and [`react-dom`](https://www.npmjs.com/package/react-dom) >=
 17.0.0 are peer dependencies.
 
 ## Styles
@@ -36,12 +37,12 @@ You may add it to your project with npm or yarn.
 
 ### npm
 
-```sh
+```shell
 npm install -D tailwindcss
 ```
 
 ### yarn
 
-```sh
+```shell
 yarn add   -D tailwindcss
 ```

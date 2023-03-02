@@ -6337,10 +6337,10 @@ react-textarea-autosize@^8.3.2:
     use-composed-ref "^1.3.0"
     use-latest "^1.2.1"
 
-react-ui-crud@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/react-ui-crud/-/react-ui-crud-0.0.8.tgz#1c535fddab1e99705ecc85ce9cd2c748758df311"
-  integrity sha512-H6t+vrCwvKhFarSvilFA2JJbuknFTe+dEOVt8Yofubg0lhzWseR2xZU3cyW19Fwxnx7AFPG4+RpSyJw57oDo3Q==
+react-ui-crud@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/react-ui-crud/-/react-ui-crud-0.0.12.tgz#f5368c1911377c833c48dd88f6fd2a4fe00671cc"
+  integrity sha512-b4+lVlXVvNOtmgKNW8GY8P3CCoxN5yPGppviZBWg6PEyiBPaYq2uewIaXqB+7e9FYpi5n+FuCunZSql/vDeoGA==
   dependencies:
     react-hook-form "^7.43.1"
 
