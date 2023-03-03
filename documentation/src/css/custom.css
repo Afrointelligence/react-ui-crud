@@ -1,4 +1,13 @@
-@import "index.styles.css";
+@import "index.styles.css" layer(theme);
+
+@layer external, theme;
+
+@layer external {
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+}
+
 /*@tailwind base;*/
 /*@tailwind components;*/
 /*@tailwind utilities;*/

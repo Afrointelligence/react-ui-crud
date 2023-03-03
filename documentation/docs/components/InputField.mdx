@@ -12,7 +12,7 @@ import { InputField, Form } from "react-ui-crud";
 ```
 
 <DisplayForm>
-    <InputField label="name" name="name"/>
+  <InputField label="name" name="name" />
 </DisplayForm>
 
 ## InputField with leading icon
@@ -21,11 +21,11 @@ import { InputField, Form } from "react-ui-crud";
 function displayInput() {
   return (
     <DisplayForm>
-        <InputField
-          label="num"
-          name="num"
-          leadingIcon={<CurrencyDollarIcon className="w-5" />}
-        />
+      <InputField
+        label="num"
+        name="num"
+        leadingIcon={<CurrencyDollarIcon className="w-5" />}
+      />
     </DisplayForm>
   );
 }
@@ -34,7 +34,7 @@ function displayInput() {
 ## InputField with tailing icon
 
 ```jsx live noInline
-const displayInput=()=> {
+const displayInput = () => {
   return (
     <DisplayForm>
       <InputField
@@ -44,8 +44,8 @@ const displayInput=()=> {
       />
     </DisplayForm>
   );
-}
-render(displayInput)
+};
+render(displayInput);
 ```
 
 ## InputField with add-on
