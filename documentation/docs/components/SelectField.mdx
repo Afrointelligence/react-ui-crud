@@ -1,0 +1,103 @@
+import {SelectField} from "react-ui-crud";
+import DisplayForm from "../../lib/Display/DisplayForm";
+export const people = [
+  { value: "Paul", label: "Paul" },
+  { value: "George", label: "George" },
+  { value: "Ringo", label: "Ringo" },
+];
+
+## For instance
+
+```jsx
+import { Form, SelectField } from "react-forms-ui";
+const people = [
+  { value: "John", label: "John" },
+  { value: "Paul", label: "Paul" },
+  { value: "George", label: "George" },
+  { value: "Ringo", label: "Ringo" },
+];
+```
+
+## SelectField
+
+You can use the SelectField component to create a select field.
+
+```jsx
+<Form>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+  />
+</Form>
+```
+
+# Result
+
+<DisplayForm>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+  />
+</DisplayForm>
+
+## Combobox
+
+You can use the type="combo" prop to make the select field a combobox.
+It will allow you to type in the field and select the value from the list.
+
+```jsx
+<Form>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="combo"
+  />
+</Form>
+```
+
+# Result
+
+<DisplayForm>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="combo"
+  />
+</DisplayForm>
+
+## Native Select
+
+You can use the type="native" prop to make the select field a combobox.
+It will allow you to make native select field.
+
+```jsx
+<Form>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="native"
+  />
+</Form>
+```
+
+# Result
+
+<DisplayForm>
+  <SelectField
+    placeholder="Select a value"
+    name="testSelect"
+    list={people}
+    accessor="value"
+    type="native"
+  />
+</DisplayForm>

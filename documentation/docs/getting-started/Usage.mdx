@@ -1,0 +1,41 @@
+---
+sidebar_position: 3
+---
+
+
+import Usage from "../../lib/CodeSandBox/Usage";
+
+# Usage
+
+<p class="description">
+  Learn the basics of working with React UI Crud components.
+</p>
+
+## Quickstart
+
+The following code snippet demonstrates a simple app that uses the React UI Crud [InputField](/docs/components/InputField/)
+component:
+
+```jsx
+import * as React from "react";
+import { Form, TextField, SubmitButton } from "react-ui-crud";
+
+export default function App() {
+  return (
+    <div className="App w-96">
+      <Form onSubmit={console.log}>
+        <TextField name="firstName" label="First Name" />
+        <TextField name="lastName" label="Last Name" />
+        <SubmitButton label="Click to submit" />
+      </Form>
+    </div>
+  );
+}
+```
+
+You can play around with this code in the interactive Code Sandbox demo below.
+Try adding in `InputField` the `tailingIcon={<QuestionMarkCircleIcon className="w-5" />}` to see how the style changes:
+
+<Usage />
+
+You can customize parameters of Components
